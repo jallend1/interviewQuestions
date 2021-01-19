@@ -1,0 +1,72 @@
+{
+  "customerFocus": [
+    {
+      "id": 0,
+      "question": "Tell me about a situation with a very demanding customer that you handled well. "
+    },
+    {
+      "id": 1,
+      "question": "Tell me about a situation with a very demanding customer that you handled poorly. WHat went wrong? What would you do differently?"
+    },
+    {
+      "id": 2,
+      "question": "Describe the steps you would take if a customer came to you with a problem you could solve at your job level."
+    },
+    {
+      "id": 3,
+      "question": "Tell me about a time when you did your best to resolve a customer or client concern and the individual still was not satisfied. What did you do next?"
+    },
+    {
+      "id": 4,
+      "question": "Tell me about a time you exceeded a customer’s expectations. How did it make the customer feel? How did it make you feel?"
+    },
+    {
+      "id": 5,
+      "question": "Describe a situation where you were given exceptional customer service. What made it stand out?"
+    },
+    {
+      "id": 6,
+      "question": "GIve me an example of when you were given special recognition or acknowledgment for going the extra mile to satisfy a customer."
+    },
+    {
+      "id": 7,
+      "question": "Describe the steps you would take if a customer came to you with a problem that was beyond your knowledge and/or responsibilities."
+    },
+    {
+      "id": 8,
+      "question": "Describe a recent situation when you didn’t know with whom you needed to speak in organization to get something done. What did you do?"
+    },
+    {
+      "id": 9,
+      "question": "Tell me about a time that you had to go out of your immediate network/job duties to help a customer."
+    },
+    {
+      "id": 10,
+      "question": "Tell me about a time when you didn’t have the answer to a question that a customer wanted right away. What did you do? What was the final outcome?"
+    },
+    {
+      "id": 11,
+      "question": "Tell me about the worst customer you’ve ever had and how you dealt with him or her."
+    },
+    {
+      "id": 12,
+      "question": "Describe the steps you would use to calm an angry customer."
+    },
+    {
+      "id": 13,
+      "question": "Tell me about a time that a customer came to you angry (not necessarily at you) and how you worked with that customer to solve the issue."
+    },
+    {
+      "id": 14,
+      "question": "Have you ever had a customer get angry at something that wasn’t your fault? If so, please explain. "
+    },
+    {
+      "id": 15,
+      "question": "Describe a situation when you took a stand for a customer."
+    },
+    {
+      "id": 16,
+      "question": "Give us an example of a time when you used your customer service philosophy to deal with a perplexing problem. "
+    }
+  ]
+}
