@@ -23,16 +23,19 @@ const generateCategories = () => {
         .map(category => {
             activeCategories.push(category);                                                        // All categories active by default, so pops it into the array
             firstWord = category.split(' ');                                                        // Takes multi-word categories down to just one word for DOM ID/Name
-            console.log(firstWord)
+            // TODO: Returning a string instead of an array! Remove the random commas showing up!
             return (
-                `<input checked type="checkbox" id="${firstWord[0]}" name="${firstWord[0]}" />
-                <label for="${firstWord[0]}">
-                    ${category}
-                </label>
-                `
+                `<div class="inputs">
+                    <input checked type="checkbox" id="${firstWord[0]}" name="${firstWord[0]}" />
+                    <label for="${firstWord[0]}">
+                        ${category}
+                    </label>
+                </div>`
             )
         });
-    CATEGORIES.innerHTML = categoryList;
+        console.log(typeof categoryList)
+        console.dir(categoryList)
+        CATEGORIES.innerHTML = categoryList.join()
 }
 
 const pickAQuestion = () => {

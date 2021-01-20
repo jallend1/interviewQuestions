@@ -206,5 +206,118 @@
       "id": 50,
       "question": "Tell us about a time when you showed empathy toward another individual or group. Describe the situation, the actions you took, and the outcome."
     }
+  ],
+  "Values": [
+    { "id": 51, "question": "Tell me about your level of integrity" },
+    {
+      "id": 52,
+      "question": "What will your references tell me about your integrity?"
+    },
+    {
+      "id": 53,
+      "question": "Describe a politically sensitive situation that you were in and how you handled the situation."
+    },
+    {
+      "id": 54,
+      "question": "Tell me about a time when you made a mistake but there was little chance of anyone else finding out. How did you handle the mistake and what was the resolution?"
+    },
+    {
+      "id": 55,
+      "question": "Tell me about a time when you bypassed your supervisor and went to your supervisor’s supervisor to handle a situation."
+    },
+    {
+      "id": 56,
+      "question": "Tell me about a situation that illustrates your ability to exercise good judgment."
+    },
+    {
+      "id": 57,
+      "question": "Describe a situation where you had to keep information confidential."
+    },
+    {
+      "id": 58,
+      "question": "Describe a situation in which you promised more than you could deliver. How did you handle it?"
+    },
+    {
+      "id": 59,
+      "question": "GIve me an example of time when you chose to be completely honest, even when doing so was risky and potentially damaging for you."
+    },
+    {
+      "id": 60,
+      "question": "Tell me about a time when you believe someone broke unwritten rules or violated acceptable business behavior. What was your role and what happened?"
+    },
+    {
+      "id": 61,
+      "question": "Can you tell me about a situation when you had to bend the rules to get the job done?"
+    },
+    {
+      "id": 62,
+      "question": "Tell me about a time when someone challenged our integrity. How did you handle it?"
+    },
+    {
+      "id": 63,
+      "question": "Describe a recent moral or ethical dilemma you have encountered."
+    }
+  ],
+  "Communication": [
+    {
+      "id": 64,
+      "question": "Tell me about a time you had to use written communication to get a point across?"
+    },
+    {
+      "id": 65,
+      "question": "Tell me about the best written proposal you have created? Why was it best? How did you know it was good?"
+    },
+    {
+      "id": 66,
+      "question": "Discuss a time when you had to assert yourself (speak up) in order to get a point across that was important to you."
+    },
+    {
+      "id": 67,
+      "question": "Have you ever had to “sell” an idea to your co-workers? How did you do it?"
+    },
+    {
+      "id": 68,
+      "question": "Give an example of time you were able to successfully communicate with an individual when that person may not have liked you."
+    },
+    {
+      "id": 69,
+      "question": "Give an example of a difficult or sensitive situation that required extensive communication."
+    },
+    {
+      "id": 70,
+      "question": "Tell me about a time when the ability to communicate effectively was critical to the success of a task or project."
+    },
+    {
+      "id": 71,
+      "question": "Describe for me a situation where you missed some important details that were communicated to you."
+    },
+    {
+      "id": 72,
+      "question": "Discuss a situation where your failure to listen attentively to a co-worker caused ill feelings because of their hastiness to get going before you fully understood what they were trying to communicate."
+    },
+    {
+      "id": 73,
+      "question": "Tell me about a time when you had difficulty understanding a conversation the person was trying to make. "
+    },
+    {
+      "id": 74,
+      "question": "Tell me about a time you worked with someone who as very difficult to understand. Explain how you overcame the situation."
+    },
+    {
+      "id": 75,
+      "question": "Tell me about how you communicate with your current supervisor concerning project process, concerns, and suggestions. "
+    },
+    {
+      "id": 76,
+      "question": "Describe how your ability to communicate effectively and build relationships with many different types of people has contributed to one of your greatest accomplishments."
+    },
+    {
+      "id": 77,
+      "question": "Describe some tricky situations in which you had to talk to people to obtain information you needed to make an important decision or recommendation."
+    },
+    {
+      "id": 78,
+      "question": "Have you prepared and communicated ideas and information in a formal setting? "
+    }
   ]
 }

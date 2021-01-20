@@ -3,25 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.teal-blue.min.css" />
+    <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
     <link rel="stylesheet" href="style.css">
     <title>Interview Prep</title>
 </head>
 <body>
     <div class="container">
         <header>
-            <h1>Interview Practice</h1>
+                <h1>Interview Practice</h1>
         </header>
-        <div>
+        </div>
+        <div id="content">
             <nav>
                 <h3>Categories</h3>
                 <form id="categories">
                 </form>
             </nav>
             <main>
-                <p id="question">...Loading a question ...</p>
-                <button id="generateNew">Generate New Question</button>
+                <h3>Random Question</h3>
+                <div>
+                    <p id="question">...Loading a question ...</p>
+                </div>
             </main>
         </div>
+        <footer>
+            <button class="mdl-button mdl-button--raised mdl-button--accent" id="generateNew">Generate New Question</button>
+        </footer>
     </div>
     <script src="app.js"></script>
 </body>
