@@ -68,5 +68,143 @@
       "id": 16,
       "question": "Give us an example of a time when you used your customer service philosophy to deal with a perplexing problem. "
     }
+  ],
+  "Diversity": [
+    {
+      "id": 17,
+      "question": "Tell me about a time when you needed to understand another person’s cultural background in order to work effectively with him or her?"
+    },
+    {
+      "id": 18,
+      "question": "Tell us about a time when you have taken steps to ensure that everyone (in your class, on your team, in your organization) felt included. Describe the situation, the actions you took, and the outcome. "
+    },
+    {
+      "id": 19,
+      "question": "What diversity, inclusion and or cultural competence training have you received and how have you applied what you learned on the job? "
+    },
+    {
+      "id": 20,
+      "question": "Describe a time when you had to help resolve a conflict between two colleagues or students. Describe the situation, the actions you took, and the outcome. "
+    },
+    {
+      "id": 21,
+      "question": "Describe how your career has been enhanced by exposure to diverse people, places, or experiences. Please provide a specific example. "
+    },
+    {
+      "id": 22,
+      "question": "What is your approach to dealing with discussions about potentially difficult topics, such as race, religion, politics, or sexual orientation? Please provide a specific example. "
+    },
+    {
+      "id": 23,
+      "question": "How have you incorporated the viewpoints and perspectives of underrepresented groups into your curriculum? Please provide a specific example. "
+    },
+    {
+      "id": 24,
+      "question": "What do you see as the most challenging aspect of working with a diverse student body? What steps have you taken to meet this challenge? "
+    },
+    {
+      "id": 25,
+      "question": "Tell us about a time when a colleague or student was not accepting of another’s diversity? Describe the situation, the actions you took, and the outcome. "
+    },
+    {
+      "id": 26,
+      "question": "Tell us about one or two specific things that you have done to promote diversity, equity and/or inclusion in your current (or last) job? "
+    },
+    {
+      "id": 27,
+      "question": "What steps have you taken to reduce bias and champion diversity understanding in your classes (or in your current job)? Please provide a specific example. "
+    },
+    {
+      "id": 28,
+      "question": "What steps have you taken at your current (or last) employer to create an inclusive work or learning environment? "
+    },
+    {
+      "id": 29,
+      "question": "What diversity challenges do you face in your current (or last) job? How did you address those challenges? Please provide a specific example. "
+    },
+    {
+      "id": 30,
+      "question": "Please describe how you work to create a campus environment that is welcoming and inclusive? Please provide a specific example. "
+    },
+    {
+      "id": 31,
+      "question": "What is your definition of diversity? "
+    },
+    {
+      "id": 32,
+      "question": "How do you encourage people to honor the uniqueness of each individual? Please provide a specific example. "
+    },
+    {
+      "id": 33,
+      "question": "How do you challenge stereotypes and promote sensitivity and inclusion? Please provide a specific example. "
+    },
+    {
+      "id": 34,
+      "question": "Describe your experience in serving or teaching underrepresented communities. What did you learn from this experience? "
+    },
+    {
+      "id": 35,
+      "question": "Describe a situation in which you utilized your multicultural skills to solve a problem. "
+    },
+    {
+      "id": 36,
+      "question": "Please provide an example of how you approached educating students about diversity, equity, or inclusion."
+    },
+    {
+      "id": 37,
+      "question": "Tell us about a time when you changed your style to work more effectively with a person from a different background. "
+    },
+    {
+      "id": 38,
+      "question": "Tell us about a time when you had to deal with conflict at work. Describe the situation, the actions you took, and the outcome. "
+    },
+    {
+      "id": 39,
+      "question": "Describe the most difficult colleague or student you've ever had to deal with at work. Why was he/she challenging? What did you do? "
+    },
+    {
+      "id": 40,
+      "question": "Describe a time when you needed to work cooperatively with someone that did not share the same ideas as you. Describe the situation, the actions you took, and the outcome. "
+    },
+    {
+      "id": 41,
+      "question": "Tell us about a time when you were unable to be tolerant of another person’s point of view. Describe the situation, the actions you took, and the outcome. "
+    },
+    {
+      "id": 42,
+      "question": "Tell us about a time when you created an environment of honesty, inclusion and respect for others. Describe the situation, the actions you took, and the outcome. "
+    },
+    {
+      "id": 43,
+      "question": "How will you contribute to the College’s efforts to enhance diversity, equity and inclusion in a meaningful way? How have you approached this on your current (or last) job? "
+    },
+    {
+      "id": 44,
+      "question": "Provide us with an example of how you work with people to create or foster civility in the workplace. "
+    },
+    {
+      "id": 45,
+      "question": "How do you adapt your teaching to meet the different culture and learning styles of your students? "
+    },
+    {
+      "id": 46,
+      "question": "Tell us about a time when you responded to a co-worker or student who made an insensitive remark. Describe the situation, the actions you took, and the outcome. "
+    },
+    {
+      "id": 47,
+      "question": "Tell us about a time when you were challenged by a situation where others were behaving in an inappropriate or uncivil way. Describe the situation, the actions you took, and the outcome. "
+    },
+    {
+      "id": 48,
+      "question": "Tell us about a time when effective listening skills helped you in a problematic situation. Describe the situation, the actions you took, and the outcome. "
+    },
+    {
+      "id": 49,
+      "question": "Describe a time when you were able to overcome a communication barrier. What steps did you take and why? What was the outcome? "
+    },
+    {
+      "id": 50,
+      "question": "Tell us about a time when you showed empathy toward another individual or group. Describe the situation, the actions you took, and the outcome."
+    }
   ]
 }

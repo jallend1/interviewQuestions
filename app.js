@@ -23,6 +23,7 @@ const generateCategories = () => {
         .map(category => {
             activeCategories.push(category);                                                        // All categories active by default, so pops it into the array
             firstWord = category.split(' ');                                                        // Takes multi-word categories down to just one word for DOM ID/Name
+            console.log(firstWord)
             return (
                 `<input checked type="checkbox" id="${firstWord[0]}" name="${firstWord[0]}" />
                 <label for="${firstWord[0]}">
@@ -51,12 +52,8 @@ const renderQuestion = question => {
 
 const updateCategories = e => {
     // TODO Switched to starting out with all selected -- Invert this logic to reflect that
-    console.log(e.target.name);
-    if(e.target.name){
-        activeCategories.push(e.target.name);
-    }
     console.log(activeCategories)
-    pickaQuestion(allQuestions)
+    pickAQuestion(allQuestions)
 }
 
 CATEGORIES.addEventListener('click', updateCategories);
