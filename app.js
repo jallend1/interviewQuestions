@@ -1,5 +1,6 @@
 const QUESTION = document.getElementById('question');
 const CATEGORIES = document.getElementById('categories')
+const GENERATENEW = document.getElementById('generateNew')
 
 const activeCategories = [];
 let allQuestions;
@@ -59,5 +60,6 @@ const updateCategories = e => {
 }
 
 CATEGORIES.addEventListener('click', updateCategories);
+GENERATENEW.addEventListener('click', pickAQuestion);
 
 getQuestions();
