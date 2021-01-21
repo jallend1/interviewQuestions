@@ -2,7 +2,7 @@ const QUESTION = document.getElementById("question");
 const CATEGORIES = document.getElementById("categories");
 const GENERATENEW = document.getElementById("generateNew");
 
-const activeCategories = [];
+let activeCategories = [];
 let allQuestions;
 
 async function getQuestions() {
@@ -24,7 +24,6 @@ const generateCategories = () => {
   })
   const categoryList = categories.map((category) => {
     firstWord = category.split(" "); // Takes multi-word categories down to just one word for DOM ID/Name
-    // TODO: Returning a string instead of an array! Remove the random commas showing up!
     return `<div class="inputs">
               <input checked type="checkbox" id="${firstWord[0]}" name="${firstWord[0]}" />
               <label for="${firstWord[0]}">
@@ -57,7 +56,14 @@ const renderQuestion = (question) => {
 const updateCategories = (e) => {
   // TODO Switched to starting out with all selected -- Invert this logic to reflect that
   console.log(activeCategories);
+  for(let i = 0; i < CATEGORIES.length; i++){
+    if(CATEGORIES[i].checked === false){
+      
+    }
+  }
+  console.log(activeCategories)
   pickAQuestion(allQuestions);
+
 };
 
 CATEGORIES.addEventListener("click", updateCategories);
