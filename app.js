@@ -18,20 +18,21 @@ async function getQuestions() {
 }
 
 const generateCategories = () => {
-  const categoryList = Object.keys(allQuestions).map((category) => {
+  const categories = Object.keys(allQuestions);
+  categories.forEach(category => {
     activeCategories.push(category); // All categories active by default, so pops it into the array
+  })
+  const categoryList = categories.map((category) => {
     firstWord = category.split(" "); // Takes multi-word categories down to just one word for DOM ID/Name
     // TODO: Returning a string instead of an array! Remove the random commas showing up!
     return `<div class="inputs">
-                    <input checked type="checkbox" id="${firstWord[0]}" name="${firstWord[0]}" />
-                    <label for="${firstWord[0]}">
-                        ${category}
-                    </label>
-                </div>`;
+              <input checked type="checkbox" id="${firstWord[0]}" name="${firstWord[0]}" />
+              <label for="${firstWord[0]}">
+                  ${category}
+              </label>
+            </div>`;
   });
-  console.log(typeof categoryList);
-  console.dir(categoryList);
-  CATEGORIES.innerHTML = categoryList.join();
+  CATEGORIES.innerHTML = categoryList.join('');
 };
 
 const pickAQuestion = () => {
