@@ -1,4 +1,4 @@
-{
+({
   "Customer Focus": [
     {
       "id": 0,
@@ -318,6 +318,58 @@
     {
       "id": 78,
       "question": "Have you prepared and communicated ideas and information in a formal setting? "
+    }
+  ]
+},
+{
+  "Individual Responsibility": [
+    {
+      "id": 79,
+      "question": "There are times when a firm decision must be made quickly, and there are other times when it is prudent to consider all angles before reaching a conclusion. Give an example of a situation when you took time in making a final decision."
+    },
+    {
+      "id": 80,
+      "question": "Rarely do issues arise that are one-dimensional. With that fact in mind, describe a time you handled a situation that had different layers."
+    },
+    {
+      "id": 81,
+      "question": "Tell me about a time when you encountered competing deadlines and you had to choose one deadline to fall by the wayside in order to meet the others."
+    },
+    {
+      "id": 82,
+      "question": "It is impossible to please every staff member or client. Describe a time when you made an unpopular decision."
+    },
+    {
+      "id": 83,
+      "question": "Recall a time when you were approached to take sides on an issue, but decided to stay neutral."
+    },
+    {
+      "id": 84,
+      "question": "Tell me about a time when you came up with a way to increase output."
+    },
+    {
+      "id": 85,
+      "question": ". Describe an occasion when you made a decision that could have had a negative impact on the company if not managed correctly"
+    },
+    {
+      "id": 86,
+      "question": "Give an example of a time when you were surprised by an unexpected situation and had to change course quickly."
+    },
+    {
+      "id": 87,
+      "question": "Recall a time when you used good judgment and logic in solving a problem."
+    },
+    {
+      "id": 88,
+      "question": "Tell me about a time when you thought a problem was resolved, only to find out that you were mistaken."
+    },
+    {
+      "id": 89,
+      "question": "Not all problems have clear-cut solutions. Give an example of a difficult decision you made and your thought process for making it."
+    },
+    {
+      "id": 90,
+      "question": "Summarize a time when you managed a situation characterized by high pressure."
     }
   ]
 }
