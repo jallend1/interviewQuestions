@@ -318,6 +318,14 @@
     {
       "id": 78,
       "question": "Have you prepared and communicated ideas and information in a formal setting? "
+    },
+    {
+      "id": 94,
+      "question": "Have you had to convince a team to work on a project they weren't thrilled about? How did you do it?"
+    },
+    {
+      "id": 95,
+      "question": "Have you handled a difficult situation with a co-worker? How?"
     }
   ],
   "Individual Responsibility": [
@@ -368,6 +376,22 @@
     {
       "id": 90,
       "question": "Summarize a time when you managed a situation characterized by high pressure."
+    },
+    {
+      "id": 91,
+      "question": "Give an example of a goal you reached and tell me how you achieved it."
+    },
+    {
+      "id": 92,
+      "question": "Describe a decision you made that was unpopular and how you handled implementing it."
+    },
+    {
+      "id": 93,
+      "question": "What do you do when your schedule is interrupted? Give me an example of how you handle it."
+    },
+    {
+      "id": 96,
+      "question": "Tell me about how you worked effectively under pressure."
     }
   ]
 }
