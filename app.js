@@ -55,13 +55,11 @@ const renderQuestion = (question) => {
 
 const updateCategories = (e) => {
   // TODO Switched to starting out with all selected -- Invert this logic to reflect that
-  console.log(activeCategories);
   for(let i = 0; i < CATEGORIES.length; i++){
     if(CATEGORIES[i].checked === false){
       
     }
   }
-  console.log(activeCategories)
   pickAQuestion(allQuestions);
 
 };
