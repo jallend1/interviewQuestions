@@ -1,4 +1,4 @@
-({
+{
   "Customer Focus": [
     {
       "id": 0,
@@ -319,9 +319,7 @@
       "id": 78,
       "question": "Have you prepared and communicated ideas and information in a formal setting? "
     }
-  ]
-},
-{
+  ],
   "Individual Responsibility": [
     {
       "id": 79,

@@ -3,7 +3,7 @@ const CATEGORIES = document.getElementById("categories");
 const GENERATENEW = document.getElementById("generateNew");
 
 let activeCategories = [];
-let allQuestions;
+let allQuestions = {};
 
 async function getQuestions() {
   try {
