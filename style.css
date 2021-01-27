@@ -24,7 +24,7 @@ main {
 #content {
   display: flex;
   flex-direction: row-reverse;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 
 h1 {
@@ -37,6 +37,8 @@ h3 {
 }
 
 #question {
+  text-align: center;
+  padding: 2em;
 }
 
 .inputs {
@@ -48,6 +50,7 @@ h3 {
   flex-direction: column;
   padding: 2em;
   margin: 2em;
+  min-width: 250px;
 }
 
 footer {

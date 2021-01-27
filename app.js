@@ -38,14 +38,13 @@ const pickAQuestion = () => {
   const categoryList = Object.keys(allQuestions);
   // Selects random category from selected
   const randomCategoryName =
-    categoryList[Math.floor(Math.random() * activeCategories.length)];
+    activeCategories[Math.floor(Math.random() * activeCategories.length)];
   // Selects random number within selected category array lengths
   const randomNumber = Math.floor(
     Math.random() * allQuestions[randomCategoryName].length
   );
   const randomQuestion =
     allQuestions[randomCategoryName][randomNumber].question;
-
   renderQuestion(randomQuestion);
 };
 
@@ -54,14 +53,11 @@ const renderQuestion = (question) => {
 };
 
 const updateCategories = (e) => {
-  // TODO Switched to starting out with all selected -- Invert this logic to reflect that
-  for(let i = 0; i < CATEGORIES.length; i++){
-    if(CATEGORIES[i].checked === false){
-      
-    }
-  }
+  const updatedCategoryIndex = activeCategories.indexOf(e.target.name);
+  updatedCategoryIndex === -1 
+    ? activeCategories.push(e.target.name)
+    : activeCategories.splice(updatedCategoryIndex, 1);
   pickAQuestion(allQuestions);
-
 };
 
 CATEGORIES.addEventListener("click", updateCategories);

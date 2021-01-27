@@ -1,5 +1,5 @@
 {
-  "Customer Focus": [
+  "Customers": [
     {
       "id": 105,
       "question": "When you’re working with a large number of customers, it’s tricky to deliver excellent service to them all. How do you go about prioritizing your customers’ needs?"
@@ -360,7 +360,7 @@
       "question": "Have you handled a difficult situation with a co-worker? How?"
     }
   ],
-  "Individual Responsibility": [
+  "Responsibility": [
     {
       "id": 102,
       "question": "Sometimes it’s just not possible to get everything on your to-do list done. Tell me about a time your responsibilities got a little overwhelming. What did you do?"
