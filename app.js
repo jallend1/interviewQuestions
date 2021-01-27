@@ -1,6 +1,7 @@
 const QUESTION = document.getElementById("question");
 const CATEGORIES = document.getElementById("categories");
 const GENERATENEW = document.getElementById("generateNew");
+const SAVEQUESTION = document.getElementById("saveQuestion");
 
 let activeCategories = [];
 let allQuestions = {};
@@ -45,12 +46,18 @@ const pickAQuestion = () => {
   );
   const randomQuestion =
     allQuestions[randomCategoryName][randomNumber].question;
-  renderQuestion(randomQuestion);
+  renderQuestion(randomQuestion, randomCategoryName);
 };
 
-const renderQuestion = (question) => {
+const renderQuestion = (question, category) => {
   QUESTION.innerText = question;
+  QUESTION.dataset.category = category;
 };
+
+const saveQuestion = () => {
+  const currentQuestion = {question: QUESTION.innerText, category: QUESTION.dataset.category}
+  localStorage.setItem('storedQuestions', JSON.stringify(currentQuestion));
+}
 
 const updateCategories = (e) => {
   const updatedCategoryIndex = activeCategories.indexOf(e.target.name);
@@ -60,7 +67,8 @@ const updateCategories = (e) => {
   pickAQuestion(allQuestions);
 };
 
-CATEGORIES.addEventListener("click", updateCategories);
-GENERATENEW.addEventListener("click", pickAQuestion);
+CATEGORIES.addEventListener('click', updateCategories);
+SAVEQUESTION.addEventListener('click', saveQuestion);
+GENERATENEW.addEventListener('click', pickAQuestion);
 
 getQuestions();
