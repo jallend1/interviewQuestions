@@ -1,3 +1,6 @@
+//TODO: Check for existing local storage
+//TODO: Add 'Saved Questions Only' menu option
+
 const QUESTION = document.getElementById("question");
 const CATEGORIES = document.getElementById("categories");
 const GENERATENEW = document.getElementById("generateNew");
