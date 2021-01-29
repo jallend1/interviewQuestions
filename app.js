@@ -1,10 +1,10 @@
-//TODO: Check for existing local storage
 //TODO: Add 'Saved Questions Only' menu option
 
 const QUESTION = document.getElementById("question");
 const CATEGORIES = document.getElementById("categories");
 const GENERATENEW = document.getElementById("generateNew");
 const SAVEQUESTION = document.getElementById("saveQuestion");
+const DISPLAYSAVED = document.getElementById('displaySaved');
 
 let activeCategories = [];
 let allQuestions = {};
@@ -59,6 +59,13 @@ const renderQuestion = (question, category) => {
   QUESTION.dataset.category = category;
 };
 
+const renderSaved = () => {
+  const questions = savedQuestions.map(question => {
+    return `<p>${question.question}</p>`
+  })
+  DISPLAYSAVED.innerHTML = questions;
+}
+
 const saveQuestion = () => {
   const currentQuestion = {question: QUESTION.innerText, category: QUESTION.dataset.category}
   savedQuestions ? savedQuestions.push(currentQuestion) : savedQuestions = [currentQuestion];
@@ -79,3 +86,4 @@ SAVEQUESTION.addEventListener('click', saveQuestion);
 GENERATENEW.addEventListener('click', pickAQuestion);
 
 getQuestions();
+renderSaved();
