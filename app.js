@@ -8,8 +8,7 @@ const DISPLAYSAVED = document.getElementById('displaySaved');
 
 let activeCategories = [];
 let allQuestions = {};
-let localData = localStorage.getItem('savedQuestions')
-let savedQuestions = JSON.parse(localData) || [];
+let savedQuestions = JSON.parse(localStorage.getItem('savedQuestions')) || [];
 
 async function getQuestions() {
   try {
@@ -61,9 +60,10 @@ const renderQuestion = (question, category) => {
 
 const renderSaved = () => {
   const questions = savedQuestions.map(question => {
-    return `<p>${question.question}</p>`
+    return `<li>${question.question}</li>`
   })
-  DISPLAYSAVED.innerHTML = questions;
+  console.log(questions);
+  DISPLAYSAVED.innerHTML = `<ul>${questions}</ul>`;
 }
 
 const saveQuestion = () => {
@@ -71,6 +71,7 @@ const saveQuestion = () => {
   savedQuestions ? savedQuestions.push(currentQuestion) : savedQuestions = [currentQuestion];
   localStorage.setItem('savedQuestions', JSON.stringify(savedQuestions));
   SAVEQUESTION.innerText = 'Question Saved'
+  renderSaved();
 }
 
 const updateCategories = (e) => {
