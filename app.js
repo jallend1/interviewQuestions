@@ -8,6 +8,8 @@ const SAVEQUESTION = document.getElementById("saveQuestion");
 
 let activeCategories = [];
 let allQuestions = {};
+let localData = localStorage.getItem('savedQuestions')
+let savedQuestions = JSON.parse(localData) || [];
 
 async function getQuestions() {
   try {
@@ -39,7 +41,7 @@ const generateCategories = () => {
 };
 
 const pickAQuestion = () => {
-  const categoryList = Object.keys(allQuestions);
+  SAVEQUESTION.innerText = 'Save Question';
   // Selects random category from selected
   const randomCategoryName =
     activeCategories[Math.floor(Math.random() * activeCategories.length)];
@@ -59,7 +61,9 @@ const renderQuestion = (question, category) => {
 
 const saveQuestion = () => {
   const currentQuestion = {question: QUESTION.innerText, category: QUESTION.dataset.category}
-  localStorage.setItem('storedQuestions', JSON.stringify(currentQuestion));
+  savedQuestions ? savedQuestions.push(currentQuestion) : savedQuestions = [currentQuestion];
+  localStorage.setItem('savedQuestions', JSON.stringify(savedQuestions));
+  SAVEQUESTION.innerText = 'Question Saved'
 }
 
 const updateCategories = (e) => {
