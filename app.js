@@ -61,9 +61,8 @@ const renderQuestion = (question, category) => {
 const renderSaved = () => {
   const questions = savedQuestions.map(question => {
     return `<li>${question.question}</li>`
-  })
-  console.log(questions);
-  DISPLAYSAVED.innerHTML = `<ul>${questions}</ul>`;
+  });
+  DISPLAYSAVED.innerHTML = `<ul>${questions.join('')}</ul>`;
 }
 
 const saveQuestion = () => {
