@@ -62,10 +62,15 @@ const pickAQuestion = () => {
     randomQuestion = allQuestions[randomCategoryName][randomNumber].question;
   }
   else{
-    console.log(savedQuestions.length)
-    const randomNumber = Math.floor(Math.random() * savedQuestions.length);
-    randomQuestion = savedQuestions[randomNumber].question;
-    randomCategoryName = savedQuestions[randomNumber].category;
+    if(savedQuestions.length){
+      const randomNumber = Math.floor(Math.random() * savedQuestions.length);
+      randomQuestion = savedQuestions[randomNumber].question;
+      randomCategoryName = savedQuestions[randomNumber].category;
+    }
+    else{
+      randomQuestion = "Save some questions you need to work on, and they'll show up here";
+      randomCategoryName = null;
+    }
   }
   renderQuestion(randomQuestion, randomCategoryName);
 };
@@ -87,6 +92,10 @@ const saveQuestion = () => {
     question: QUESTION.innerText,
     category: QUESTION.dataset.category,
   };
+  if(QUESTION.dataset.category === 'null'){
+    SAVEQUESTION.innerText = "No question here to save"
+    return;
+  }
   savedQuestions
     ? savedQuestions.push(currentQuestion)
     : (savedQuestions = [currentQuestion]);
