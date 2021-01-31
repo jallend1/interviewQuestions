@@ -1,5 +1,3 @@
-//TODO: Add 'Saved Questions Only' menu option
-
 const QUESTION = document.getElementById("question");
 const CATEGORIES = document.getElementById("categories");
 const GENERATENEW = document.getElementById("generateNew");
@@ -10,6 +8,7 @@ const MENU = document.getElementById('menu');
 let activeCategories = [];
 let allQuestions = {};
 let savedQuestions = JSON.parse(localStorage.getItem("savedQuestions")) || [];
+let filterQuestions = false;
 
 async function getQuestions() {
   try {
@@ -41,26 +40,33 @@ const generateCategories = () => {
 };
 
 const handleNav = e => {
-  if(e.target.className.includes('active-item')) return;              // If we're clicking to the same place, ignores it
-  else{
+  if(!e.target.className.includes('active-item')){
     for(item of MENU.children){                                       // Removes active-item from any existing element that has it
       item.classList.remove('active-item');
     }
     e.target.classList.add('active-item');                            // Adds active-item to the one that was clicked
   }
+  e.target.textContent === 'Saved Questions' ? filterQuestions = true : filterQuestions = false; // Flips the saved questions filter on or off
+  pickAQuestion();
 }
 
 const pickAQuestion = () => {
-  SAVEQUESTION.innerText = "Save Question";
-  // Selects random category from selected
-  const randomCategoryName =
-    activeCategories[Math.floor(Math.random() * activeCategories.length)];
-  // Selects random number within selected category array lengths
-  const randomNumber = Math.floor(
-    Math.random() * allQuestions[randomCategoryName].length
-  );
-  const randomQuestion =
-    allQuestions[randomCategoryName][randomNumber].question;
+  let randomCategoryName;
+  let randomQuestion;
+  if(filterQuestions === false){
+    SAVEQUESTION.innerText = "Save Question";
+    // Selects random category from selected
+    randomCategoryName = activeCategories[Math.floor(Math.random() * activeCategories.length)];
+    // Selects random number within selected category array lengths
+    const randomNumber = Math.floor(Math.random() * allQuestions[randomCategoryName].length);
+    randomQuestion = allQuestions[randomCategoryName][randomNumber].question;
+  }
+  else{
+    console.log(savedQuestions.length)
+    const randomNumber = Math.floor(Math.random() * savedQuestions.length);
+    randomQuestion = savedQuestions[randomNumber].question;
+    randomCategoryName = savedQuestions[randomNumber].category;
+  }
   renderQuestion(randomQuestion, randomCategoryName);
 };
 
