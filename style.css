@@ -37,6 +37,20 @@ a {
   margin: 5em;
 }
 
+nav ul {
+  list-style: none;
+  display: flex;
+}
+
+.menu-items {
+  padding-right: 2em;
+}
+
+.active-item {
+  background-color: pink;
+  text-align: left;
+}
+
 main {
   padding: 2em;
   text-align: center;

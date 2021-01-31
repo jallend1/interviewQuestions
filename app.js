@@ -5,6 +5,7 @@ const CATEGORIES = document.getElementById("categories");
 const GENERATENEW = document.getElementById("generateNew");
 const SAVEQUESTION = document.getElementById("saveQuestion");
 const DISPLAYSAVED = document.getElementById("displaySaved");
+const MENU = document.getElementById('menu');
 
 let activeCategories = [];
 let allQuestions = {};
@@ -38,6 +39,16 @@ const generateCategories = () => {
   });
   CATEGORIES.innerHTML = categoryList.join("");
 };
+
+const handleNav = e => {
+  if(e.target.className.includes('active-item')) return;              // If we're clicking to the same place, ignores it
+  else{
+    for(item of MENU.children){                                       // Removes active-item from any existing element that has it
+      item.classList.remove('active-item');
+    }
+    e.target.classList.add('active-item');                            // Adds active-item to the one that was clicked
+  }
+}
 
 const pickAQuestion = () => {
   SAVEQUESTION.innerText = "Save Question";
@@ -89,6 +100,7 @@ const updateCategories = (e) => {
 CATEGORIES.addEventListener("click", updateCategories);
 SAVEQUESTION.addEventListener("click", saveQuestion);
 GENERATENEW.addEventListener("click", pickAQuestion);
+MENU.addEventListener('click', handleNav);
 
 getQuestions();
 renderSaved();
