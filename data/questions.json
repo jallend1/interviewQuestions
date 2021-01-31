@@ -88,7 +88,7 @@
     },
     {
       "id": 20,
-      "question": "Describe a time when you had to help resolve a conflict between two colleagues or students. Describe the situation, the actions you took, and the outcome. "
+      "question": "Describe a time when you had to help resolve a conflict between two colleagues. Describe the situation, the actions you took, and the outcome. "
     },
     {
       "id": 21,
@@ -103,20 +103,12 @@
       "question": "How have you incorporated the viewpoints and perspectives of underrepresented groups into your curriculum? Please provide a specific example. "
     },
     {
-      "id": 24,
-      "question": "What do you see as the most challenging aspect of working with a diverse student body? What steps have you taken to meet this challenge? "
-    },
-    {
       "id": 25,
-      "question": "Tell us about a time when a colleague or student was not accepting of another’s diversity? Describe the situation, the actions you took, and the outcome. "
+      "question": "Tell us about a time when a colleague was not accepting of another’s diversity? Describe the situation, the actions you took, and the outcome. "
     },
     {
       "id": 26,
       "question": "Tell us about one or two specific things that you have done to promote diversity, equity and/or inclusion in your current (or last) job? "
-    },
-    {
-      "id": 27,
-      "question": "What steps have you taken to reduce bias and champion diversity understanding in your classes (or in your current job)? Please provide a specific example. "
     },
     {
       "id": 28,
@@ -143,16 +135,8 @@
       "question": "How do you challenge stereotypes and promote sensitivity and inclusion? Please provide a specific example. "
     },
     {
-      "id": 34,
-      "question": "Describe your experience in serving or teaching underrepresented communities. What did you learn from this experience? "
-    },
-    {
       "id": 35,
       "question": "Describe a situation in which you utilized your multicultural skills to solve a problem. "
-    },
-    {
-      "id": 36,
-      "question": "Please provide an example of how you approached educating students about diversity, equity, or inclusion."
     },
     {
       "id": 37,
@@ -164,7 +148,7 @@
     },
     {
       "id": 39,
-      "question": "Describe the most difficult colleague or student you've ever had to deal with at work. Why was he/she challenging? What did you do? "
+      "question": "Describe the most difficult colleague you've ever had to deal with at work. Why was he/she challenging? What did you do? "
     },
     {
       "id": 40,
@@ -187,12 +171,8 @@
       "question": "Provide us with an example of how you work with people to create or foster civility in the workplace. "
     },
     {
-      "id": 45,
-      "question": "How do you adapt your teaching to meet the different culture and learning styles of your students? "
-    },
-    {
       "id": 46,
-      "question": "Tell us about a time when you responded to a co-worker or student who made an insensitive remark. Describe the situation, the actions you took, and the outcome. "
+      "question": "Tell us about a time when you responded to a co-worker who made an insensitive remark. Describe the situation, the actions you took, and the outcome. "
     },
     {
       "id": 47,
