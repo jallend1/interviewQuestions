@@ -4,6 +4,7 @@ const GENERATENEW = document.getElementById("generateNew");
 const SAVEQUESTION = document.getElementById("saveQuestion");
 const DISPLAYSAVED = document.getElementById("displaySaved");
 const MENU = document.getElementById('menu');
+const CLEARQUESTIONS = document.getElementById('clearHistory');
 
 let activeCategories = [];
 let allQuestions = {};
@@ -39,6 +40,12 @@ const generateCategories = () => {
   CATEGORIES.innerHTML = categoryList.join("");
 };
 
+const clearHistory = () => {
+  localStorage.clear();
+  savedQuestions = [];
+  pickAQuestion();
+}
+
 const handleNav = e => {
   if(!e.target.className.includes('active-item')){
     for(item of MENU.children){                                       // Removes active-item from any existing element that has it
@@ -68,7 +75,7 @@ const pickAQuestion = () => {
       randomCategoryName = savedQuestions[randomNumber].category;
     }
     else{
-      randomQuestion = "Save some questions you need to work on, and they'll show up here";
+      randomQuestion = "Save some questions you need to work on, and they'll show up here for your practice!";
       randomCategoryName = null;
     }
   }
@@ -93,7 +100,7 @@ const saveQuestion = () => {
     category: QUESTION.dataset.category,
   };
   if(QUESTION.dataset.category === 'null'){
-    SAVEQUESTION.innerText = "No question here to save"
+    SAVEQUESTION.innerText = "No question to save"
     return;
   }
   savedQuestions
@@ -116,6 +123,7 @@ CATEGORIES.addEventListener("click", updateCategories);
 SAVEQUESTION.addEventListener("click", saveQuestion);
 GENERATENEW.addEventListener("click", pickAQuestion);
 MENU.addEventListener('click', handleNav);
+CLEARQUESTIONS.addEventListener('click', clearHistory);
 
 getQuestions();
 renderSaved();
