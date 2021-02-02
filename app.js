@@ -73,6 +73,7 @@ const pickAQuestion = () => {
       const randomNumber = Math.floor(Math.random() * savedQuestions.length);
       randomQuestion = savedQuestions[randomNumber].question;
       randomCategoryName = savedQuestions[randomNumber].category;
+      SAVEQUESTION.innerText = 'Remove Question'
     }
     else{
       randomQuestion = "Save some questions you need to work on, and they'll show up here for your practice!";
@@ -81,6 +82,26 @@ const pickAQuestion = () => {
   }
   renderQuestion(randomQuestion, randomCategoryName);
 };
+
+const questionStorage = () => {
+  const currentQuestion = {
+    question: QUESTION.innerText,
+    category: QUESTION.dataset.category,
+  };
+  if(QUESTION.dataset.category === 'null'){
+    SAVEQUESTION.innerText = "No question to save"
+    return;
+  }
+  filterQuestions ? removeQuestion(currentQuestion) : saveQuestion(currentQuestion);
+};
+
+const removeQuestion = (currentQuestion) => {
+  const questionIndex = savedQuestions.findIndex(question => question.question === currentQuestion.question);
+  savedQuestions.splice(questionIndex, 1);
+  localStorage.setItem("savedQuestions", JSON.stringify(savedQuestions));
+  renderSaved();
+  pickAQuestion();
+}
 
 const renderQuestion = (question, category) => {
   QUESTION.innerText = question;
@@ -94,22 +115,12 @@ const renderSaved = () => {
   DISPLAYSAVED.innerHTML = `<ul>${questions.join("")}</ul>`;
 };
 
-const saveQuestion = () => {
-  const currentQuestion = {
-    question: QUESTION.innerText,
-    category: QUESTION.dataset.category,
-  };
-  if(QUESTION.dataset.category === 'null'){
-    SAVEQUESTION.innerText = "No question to save"
-    return;
-  }
-  savedQuestions
-    ? savedQuestions.push(currentQuestion)
-    : (savedQuestions = [currentQuestion]);
+const saveQuestion = (currentQuestion) => {
+  savedQuestions ? savedQuestions.push(currentQuestion) : (savedQuestions = [currentQuestion]);
   localStorage.setItem("savedQuestions", JSON.stringify(savedQuestions));
   SAVEQUESTION.innerText = "Question Saved";
   renderSaved();
-};
+}
 
 const updateCategories = (e) => {
   const updatedCategoryIndex = activeCategories.indexOf(e.target.name);
@@ -120,7 +131,7 @@ const updateCategories = (e) => {
 };
 
 CATEGORIES.addEventListener("click", updateCategories);
-SAVEQUESTION.addEventListener("click", saveQuestion);
+SAVEQUESTION.addEventListener("click", questionStorage);
 GENERATENEW.addEventListener("click", pickAQuestion);
 MENU.addEventListener('click', handleNav);
 CLEARQUESTIONS.addEventListener('click', clearHistory);
