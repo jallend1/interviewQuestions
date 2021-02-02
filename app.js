@@ -1,3 +1,5 @@
+// TODO QUESTION and DISPLAYSAVED might be better outside of global context as they don't have event listeners attached?
+
 const QUESTION = document.getElementById("question");
 const CATEGORIES = document.getElementById("categories");
 const GENERATENEW = document.getElementById("generateNew");
@@ -116,9 +118,28 @@ const renderSaved = () => {
 };
 
 const saveQuestion = (currentQuestion) => {
-  savedQuestions ? savedQuestions.push(currentQuestion) : (savedQuestions = [currentQuestion]);
-  localStorage.setItem("savedQuestions", JSON.stringify(savedQuestions));
-  SAVEQUESTION.innerText = "Question Saved";
+  if(savedQuestions){                                     // If the array isn't empty
+    //Checks to see if the question was already saved
+    const alreadyExists = savedQuestions.findIndex(question => question.question === currentQuestion.question);
+    //If not, pushes it into the array
+    if(alreadyExists === -1){
+      savedQuestions.push(currentQuestion);
+      SAVEQUESTION.innerText = "Question Saved";
+      localStorage.setItem("savedQuestions", JSON.stringify(savedQuestions));
+      pickAQuestion();
+    }
+    // If it does, indicates so on button and picks a new question
+    else{
+      SAVEQUESTION.innerText = "Question already saved"
+      window.setTimeout(pickAQuestion, 700);
+    }
+  }
+  else{
+    savedQuestions = [currentQuestion];
+    SAVEQUESTION.innerText = "Question Saved";
+    localStorage.setItem("savedQuestions", JSON.stringify(savedQuestions));
+    pickAQuestion();
+  }
   renderSaved();
 }
 
