@@ -18,14 +18,16 @@ body {
   color: #364f6b;
 }
 
-img {
-  max-height: 300px;
-}
-
 a {
   font-size: 10px;
   text-decoration: none;
   color: gray;
+  text-align: center;
+}
+
+#splash {
+  display: flex;
+  flex-direction: column;
 }
 
 #banner {
@@ -33,8 +35,9 @@ a {
 }
 
 #banner div {
-  padding: 2em;
-  margin: 5em;
+  text-align: center;
+  max-width: 400px;
+  padding: 0;
 }
 
 nav ul {
