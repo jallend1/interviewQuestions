@@ -45,6 +45,7 @@ const generateCategories = () => {
 const clearHistory = () => {
   localStorage.clear();
   savedQuestions = [];
+  renderSaved();
   pickAQuestion();
 }
 
