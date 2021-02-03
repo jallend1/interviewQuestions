@@ -35,6 +35,9 @@ header {
 h1,
 h3 {
   font-family: 'Khula', sans-serif;
+  text-align: center;
+  color: #ff4f5a;
+  /* color: #364f6b; */
 }
 
 h2 {
@@ -77,27 +80,17 @@ nav ul {
   text-align: left;
 }
 
-main {
-  padding: 2em;
-  text-align: center;
-  width: 80%;
-}
-
 #content {
+  background-color: #f7f8fc;
   display: flex;
   flex-direction: row-reverse;
   justify-content: space-around;
 }
 
-h1 {
+main {
+  padding: 2em;
   text-align: center;
-  /* color: #364f6b; */
-  color: #ff4f5a;
-}
-
-h3 {
-  /* color: #3fc1c9; */
-  color: #ff4f5a;
+  width: 80%;
 }
 
 #question {
