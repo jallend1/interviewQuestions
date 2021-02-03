@@ -1,12 +1,19 @@
 /* TODO: Complimentary color - #ff4f5a; */
 /* #364f6b */
 
+/* Font styles 
+Regular text: font-family: 'Biryani', sans-serif;
+font-family: 'Fanwood Text', serif;
+font-family: 'Khula', sans-serif;
+*/
+
 html {
   background-color: #ff4f5a;
   margin: auto;
 }
 
 body {
+  font-family: 'Biryani', sans-serif;
   max-width: 80vw;
   margin: auto;
   background-color: #fff;
@@ -23,6 +30,17 @@ header {
   display: grid;
   grid-template-columns: minmax(300px, 1fr) 1fr;
   grid-gap: 30px;
+}
+
+h1,
+h3 {
+  font-family: 'Khula', sans-serif;
+}
+
+h2 {
+  font-family: 'Fanwood Text', serif;
+  font-size: 1.25em;
+  letter-spacing: 0.05em;
 }
 
 header img {
