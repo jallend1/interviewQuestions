@@ -1,4 +1,5 @@
 /* TODO: Complimentary color - #ff4f5a; */
+/* #364f6b */
 
 html {
   background-color: #ff4f5a;
@@ -13,9 +14,24 @@ body {
 }
 
 .container {
-  margin: auto;
+  margin: 2em auto;
   max-width: 80%;
   color: #364f6b;
+}
+
+header {
+  display: grid;
+  grid-template-columns: minmax(300px, 1fr) 1fr;
+  grid-gap: 30px;
+}
+
+header img {
+  object-fit: contain;
+}
+
+#image {
+  display: flex;
+  flex-direction: column;
 }
 
 a {
@@ -23,6 +39,10 @@ a {
   text-decoration: none;
   color: gray;
   text-align: center;
+}
+
+#blurb {
+  margin: 1em;
 }
 
 nav ul {

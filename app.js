@@ -1,4 +1,7 @@
 // TODO QUESTION and DISPLAYSAVED might be better outside of global context as they don't have event listeners attached?
+// TODO Set Saved / All questions navbar into radio button?
+// TODO Add pages to view all questions / view all saved questions
+// TODO Bugfix: When no categories are clicked, display a message
 
 const QUESTION = document.getElementById("question");
 const CATEGORIES = document.getElementById("categories");
