@@ -21,13 +21,6 @@
                 <h2>Practice questions make them less hard.</h2>
             </div>
         </header>
-        <nav>
-            <ul id="menu">
-                <li class="menu-items active-item">All Questions</li>
-                <li class="menu-items">Saved Questions</li>
-            </ul>
-        </nav>
-        </div>
         <div id="content">
             <nav>
                 <h3>Categories</h3>
@@ -35,6 +28,12 @@
                 </form>
             </nav>
             <main>
+                <form id="pool">
+                    <input type="radio" name="questionpool" id="allQs" checked value="false">
+                    <label for="allQs">All Questions</label>
+                    <input type="radio" name="questionpool" id="savedQs" value="true">
+                    <label for="savedQs">Saved Questions</label>
+                </form>
                 <h3>Random Question</h3>
                 <div>
                     <p id="question">...Loading a question ...</p>

@@ -68,20 +68,6 @@ a {
   text-align: center;
 }
 
-nav ul {
-  list-style: none;
-  display: flex;
-}
-
-.menu-items {
-  padding-right: 2em;
-}
-
-.active-item {
-  background-color: pink;
-  text-align: left;
-}
-
 #content {
   background-color: #f7f8fc;
   display: flex;

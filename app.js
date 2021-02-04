@@ -1,5 +1,4 @@
 // TODO QUESTION and DISPLAYSAVED might be better outside of global context as they don't have event listeners attached?
-// TODO Set Saved / All questions navbar into radio button?
 // TODO Add pages to view all questions / view all saved questions
 // TODO Bugfix: When no categories are clicked, display a message -- Maybe add a message field?
 
@@ -8,8 +7,8 @@ const CATEGORIES = document.getElementById("categories");
 const GENERATENEW = document.getElementById("generateNew");
 const SAVEQUESTION = document.getElementById("saveQuestion");
 const DISPLAYSAVED = document.getElementById("displaySaved");
-const MENU = document.getElementById('menu');
 const CLEARQUESTIONS = document.getElementById('clearHistory');
+const POOL = document.getElementById('pool');
 
 let activeCategories = [];
 let allQuestions = {};
@@ -53,14 +52,10 @@ const clearHistory = () => {
 }
 
 const handleNav = e => {
-  if(!e.target.className.includes('active-item')){
-    for(item of MENU.children){                                       // Removes active-item from any existing element that has it
-      item.classList.remove('active-item');
-    }
-    e.target.classList.add('active-item');                            // Adds active-item to the one that was clicked
+  if(e.target.value){
+    filterQuestions = e.target.value === 'true';
+    pickAQuestion();
   }
-  e.target.textContent === 'Saved Questions' ? filterQuestions = true : filterQuestions = false; // Flips the saved questions filter on or off
-  pickAQuestion();
 }
 
 const pickAQuestion = () => {
@@ -158,8 +153,8 @@ const updateCategories = (e) => {
 CATEGORIES.addEventListener("click", updateCategories);
 SAVEQUESTION.addEventListener("click", questionStorage);
 GENERATENEW.addEventListener("click", pickAQuestion);
-MENU.addEventListener('click', handleNav);
 CLEARQUESTIONS.addEventListener('click', clearHistory);
+POOL.addEventListener('click', handleNav);
 
 getQuestions();
 renderSaved();
