@@ -1,57 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Biryani&family=Fanwood+Text:ital@1&family=Khula:wght@800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Biryani&family=Fanwood+Text:ital@1&family=Khula:wght@800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
     <title>Interview Prep</title>
-</head>
-<body>
+  </head>
+  <body>
     <div class="container">
-        <header>
-            <div id="image">
-                <img src="interview.png">
-                <a href="https://www.freepik.com/vectors/work">Image from www.freepik.com</a>
-            </div>
-            <div id="blurb">
-                <h1>Sample Interview Questions</h1>
-                <h2>Interviews are hard.</h2>
-                <h2>Practice questions make them less hard.</h2>
-            </div>
-        </header>
-        <div id="content">
-            <nav>
-                <h3>Categories</h3>
-                <form id="categories">
-                </form>
-            </nav>
-            <main>
-                <form id="pool">
-                    <input type="radio" name="questionpool" id="allQs" checked value="false">
-                    <label for="allQs">All Questions</label>
-                    <input type="radio" name="questionpool" id="savedQs" value="true">
-                    <label for="savedQs">Saved Questions</label>
-                </form>
-                <h3>Random Question</h3>
-                <div>
-                    <p id="question">...Loading a question ...</p>
-                </div>
-                <div class="buttons">
-                    <button id="saveQuestion">Save Question</button>
-                    <button id="clearHistory">Clear Saved Questions</button>
-                    <button id="generateNew">Generate New Question</button>
-                </div>
-            </main>
+      <header>
+        <div id="image">
+          <img src="interview.png" />
+          <a href="https://www.freepik.com/vectors/work"
+            >Image from www.freepik.com</a
+          >
         </div>
-        <div id="displaySaved">
-            <p>Saved questions go here for now for some reason</p>
+        <div id="blurb">
+          <h1>Sample Interview Questions</h1>
+          <h2>Interviews are hard.</h2>
+          <h2>Practice questions make them less hard.</h2>
         </div>
-        <footer>
-            <p>Note: Saved questions are stored in your browser, so clearing your browser cache _will_ remove all questions</p>
-        </footer>
+      </header>
+      <div id="content">
+        <nav>
+          <h3>Categories</h3>
+          <form id="categories"></form>
+        </nav>
+        <main>
+          <form id="pool">
+            <input
+              type="radio"
+              name="questionpool"
+              id="allQs"
+              checked
+              value="false"
+            />
+            <label for="allQs">All Questions</label>
+            <input type="radio" name="questionpool" id="savedQs" value="true" />
+            <label for="savedQs">Saved Questions</label>
+          </form>
+          <h3>Random Question</h3>
+          <div>
+            <p id="question">...Loading a question ...</p>
+          </div>
+          <div class="buttons">
+            <button id="saveQuestion">Save Question</button>
+            <button id="clearHistory">Clear Saved Questions</button>
+            <button id="generateNew">Generate New Question</button>
+          </div>
+        </main>
+      </div>
+      <div id="displaySaved">
+        <p>Saved questions go here for now for some reason</p>
+      </div>
+      <footer>
+        <p>
+          Note: Saved questions are stored in your browser, so clearing your
+          browser cache _will_ remove all questions
+        </p>
+      </footer>
     </div>
     <script src="app.js"></script>
-</body>
+  </body>
 </html>
