@@ -28,8 +28,12 @@ body {
 
 header {
   display: grid;
-  grid-template-columns: minmax(300px, 1fr) 1fr;
-  grid-gap: 30px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 1em;
+}
+
+h1 {
+  font-size: 2.5em;
 }
 
 h1,
@@ -44,10 +48,7 @@ h2 {
   font-family: 'Fanwood Text', serif;
   font-size: 1.25em;
   letter-spacing: 0.05em;
-}
-
-header img {
-  object-fit: contain;
+  margin: 0;
 }
 
 #image {
@@ -64,6 +65,7 @@ a {
 
 #blurb {
   margin: 1em;
+  text-align: center;
 }
 
 nav ul {
