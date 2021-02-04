@@ -86,10 +86,6 @@ main {
   padding: 2em;
 }
 
-.inputs {
-  display: flex;
-}
-
 #categories {
   display: flex;
   flex-direction: column;
@@ -97,7 +93,10 @@ main {
   min-width: 250px;
 }
 
-.buttons button {
-  margin: auto;
-  display: block;
+button {
+  color: #fff;
+  background-color: #4eb5f1;
+  border-radius: 1em;
+  padding: 1em;
+  text-align: center;
 }
