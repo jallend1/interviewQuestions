@@ -81,6 +81,11 @@ main {
   width: 80%;
 }
 
+#questionBox {
+  border: dashed 1px gray;
+  margin-bottom: 1.25em;
+}
+
 #question {
   text-align: center;
   padding: 2em;
@@ -89,8 +94,7 @@ main {
 #categories {
   display: flex;
   flex-direction: column;
-  padding: 2em;
-  min-width: 250px;
+  min-width: 200px;
 }
 
 .buttons div {
