@@ -62,15 +62,21 @@ const pickAQuestion = () => {
   let randomCategoryName;
   let randomQuestion;
   if (filterQuestions === false) {
-    SAVEQUESTION.innerText = "Save Question";
-    // Selects random category from selected
-    randomCategoryName =
-      activeCategories[Math.floor(Math.random() * activeCategories.length)];
-    // Selects random number within selected category array lengths
-    const randomNumber = Math.floor(
-      Math.random() * allQuestions[randomCategoryName].length
-    );
-    randomQuestion = allQuestions[randomCategoryName][randomNumber].question;
+    if(!activeCategories.length){
+      randomQuestion = "We can't display a question until you pick at least one category."
+      randomCategoryName = null;
+    }
+    else{
+        SAVEQUESTION.innerText = "Save Question";
+      // Selects random category from selected
+      randomCategoryName =
+        activeCategories[Math.floor(Math.random() * activeCategories.length)];
+      // Selects random number within selected category array lengths
+      const randomNumber = Math.floor(
+        Math.random() * allQuestions[randomCategoryName].length
+      );
+      randomQuestion = allQuestions[randomCategoryName][randomNumber].question;
+    }
   } else {
     if (savedQuestions.length) {
       const randomNumber = Math.floor(Math.random() * savedQuestions.length);
@@ -155,7 +161,7 @@ const updateCategories = (e) => {
   updatedCategoryIndex === -1
     ? activeCategories.push(e.target.name)
     : activeCategories.splice(updatedCategoryIndex, 1);
-  pickAQuestion(allQuestions);
+    pickAQuestion();
 };
 
 CATEGORIES.addEventListener("click", updateCategories);
