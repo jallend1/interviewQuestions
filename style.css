@@ -93,10 +93,18 @@ main {
   min-width: 250px;
 }
 
+.buttons div {
+  padding-bottom: 1.5em;
+}
+
 button {
   color: #fff;
   background-color: #4eb5f1;
   border-radius: 1em;
   padding: 1em;
   text-align: center;
+}
+
+#clearHistory {
+  background-color: red;
 }
