@@ -1,6 +1,6 @@
 // TODO QUESTION and DISPLAYSAVED might be better outside of global context as they don't have event listeners attached?
 // TODO Add pages to view all questions / view all saved questions
-// TODO Bugfix: When no categories are clicked, display a message -- Maybe add a message field?
+// TODO Clean up pickAQuestion / saveAQuestion functions! Break those bad boys up!
 
 const QUESTION = document.getElementById("question");
 const CATEGORIES = document.getElementById("categories");

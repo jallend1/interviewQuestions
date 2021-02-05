@@ -10,7 +10,7 @@
     },
     {
       "id": 1,
-      "question": "Tell me about a situation with a very demanding customer that you handled poorly. WHat went wrong? What would you do differently?"
+      "question": "Tell me about a situation with a very demanding customer that you handled poorly. What went wrong? What would you do differently?"
     },
     {
       "id": 2,
@@ -161,10 +161,6 @@
     {
       "id": 42,
       "question": "Tell us about a time when you created an environment of honesty, inclusion and respect for others. Describe the situation, the actions you took, and the outcome. "
-    },
-    {
-      "id": 43,
-      "question": "How will you contribute to the College’s efforts to enhance diversity, equity and inclusion in a meaningful way? How have you approached this on your current (or last) job? "
     },
     {
       "id": 44,
