@@ -60,7 +60,8 @@ const handleNav = (e) => {
 };
 
 const handleReveal = (e) => {
-  DISPLAYQS.classList.toggle('hidden');
+  DISPLAYQS.classList.remove('hidden');
+  console.log(e.target.id)
   if(e.target.id === 'viewSaved'){
     renderSaved();
   }
