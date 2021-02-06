@@ -61,7 +61,6 @@ const handleNav = (e) => {
 
 const handleReveal = (e) => {
   DISPLAYQS.classList.remove('hidden');
-  console.log(e.target.id)
   if(e.target.id === 'viewSaved'){
     renderSaved();
   }
@@ -70,8 +69,8 @@ const handleReveal = (e) => {
     for(const category in allQuestions){
       allQuestions[category].forEach(questionItem => questions.push(questionItem.question));
     }
-    let questionHTML = questions.map(question => `<div>${question}</div>`);
-    DISPLAYQS.innerHTML = questionHTML.join("");
+    let questionHTML = questions.map(question => `<li>${question}</li>`)
+    DISPLAYQS.innerHTML = `<h3>All Questions</h3><ul>` + questionHTML.join("") + `<ul>`;
   }
 }
 
@@ -142,7 +141,7 @@ const renderSaved = () => {
   const questions = savedQuestions.map((question) => {
     return `<li>${question.question}</li>`;
   });
-  DISPLAYQS.innerHTML = `<ul>${questions.join("")}</ul>`;
+  DISPLAYQS.innerHTML = `<h3>Saved Questions</h3><ul>${questions.join("")}</ul>`;
 };
 
 const saveQuestion = (currentQuestion) => {

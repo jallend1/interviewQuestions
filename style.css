@@ -103,7 +103,7 @@ main {
   margin-left: 4em;
 }
 
-nav ul {
+ul {
   list-style: none;
 }
 
@@ -121,6 +121,13 @@ button {
 
 #clearHistory {
   background-color: red;
+}
+
+#displayQs > ul > li {
+  margin: 2em;
+  font-size: 0.75em;
+  text-align: center;
+  line-height: 1.5em;
 }
 
 .hidden {
