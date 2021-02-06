@@ -122,3 +122,7 @@ button {
 #clearHistory {
   background-color: red;
 }
+
+.hidden {
+  display: none;
+}

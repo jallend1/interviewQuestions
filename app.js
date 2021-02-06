@@ -1,4 +1,4 @@
-// TODO QUESTION and DISPLAYSAVED might be better outside of global context as they don't have event listeners attached?
+// TODO QUESTION and DISPLAYQS might be better outside of global context as they don't have event listeners attached?
 // TODO Add pages to view all questions / view all saved questions
 // TODO Clean up pickAQuestion / saveAQuestion functions! Break those bad boys up!
 
@@ -6,9 +6,10 @@ const QUESTION = document.getElementById("question");
 const CATEGORIES = document.getElementById("categories");
 const GENERATENEW = document.getElementById("generateNew");
 const SAVEQUESTION = document.getElementById("saveQuestion");
-const DISPLAYSAVED = document.getElementById("displaySaved");
+const DISPLAYQS = document.getElementById("displayQs");
 const CLEARQUESTIONS = document.getElementById("clearHistory");
 const POOL = document.getElementById("pool");
+const REVEALQUESTIONS = document.getElementById('revealQuestions')
 
 let activeCategories = [];
 let allQuestions = {};
@@ -57,6 +58,16 @@ const handleNav = (e) => {
     pickAQuestion();
   }
 };
+
+const handleReveal = (e) => {
+  DISPLAYQS.classList.toggle('hidden');
+  if(e.target.id === 'viewSaved'){
+    renderSaved();
+  }
+  if(e.target.id === 'viewAll'){
+    console.log(allQuestions);
+  }
+}
 
 const pickAQuestion = () => {
   let randomCategoryName;
@@ -125,7 +136,7 @@ const renderSaved = () => {
   const questions = savedQuestions.map((question) => {
     return `<li>${question.question}</li>`;
   });
-  DISPLAYSAVED.innerHTML = `<ul>${questions.join("")}</ul>`;
+  DISPLAYQS.innerHTML = `<ul>${questions.join("")}</ul>`;
 };
 
 const saveQuestion = (currentQuestion) => {
@@ -169,6 +180,7 @@ SAVEQUESTION.addEventListener("click", questionStorage);
 GENERATENEW.addEventListener("click", pickAQuestion);
 CLEARQUESTIONS.addEventListener("click", clearHistory);
 POOL.addEventListener("click", handleNav);
+REVEALQUESTIONS.addEventListener('click', handleReveal);
 
 getQuestions();
 renderSaved();
