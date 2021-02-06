@@ -60,11 +60,16 @@ const handleNav = (e) => {
 };
 
 const handleReveal = (e) => {
-  DISPLAYQS.classList.remove('hidden');
   if(e.target.id === 'viewSaved'){
+    DISPLAYQS.classList.toggle('hidden');
+    const VIEWSAVED = document.getElementById('viewSaved');
+    DISPLAYQS.classList.contains('hidden') ? VIEWSAVED.innerText = "Show Saved Questions" : VIEWSAVED.innerText = "Hide Saved Questions"
     renderSaved();
   }
   if(e.target.id === 'viewAll'){
+    DISPLAYQS.classList.toggle('hidden');
+    const VIEWALL = document.getElementById('viewAll');
+    DISPLAYQS.classList.contains('hidden') ? VIEWALL.innerText = "Show All Questions" : VIEWALL.innerText = "Hide All Questions"
     let questions = [];
     for(const category in allQuestions){
       allQuestions[category].forEach(questionItem => questions.push(questionItem.question));
