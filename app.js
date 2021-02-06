@@ -1,6 +1,6 @@
 // TODO QUESTION and DISPLAYQS might be better outside of global context as they don't have event listeners attached?
-// TODO Add pages to view all questions / view all saved questions
 // TODO Clean up pickAQuestion / saveAQuestion functions! Break those bad boys up!
+// TODO Change View All Qs / Saved Qs to HIDE All Qs / Saved Qs after clicked
 
 const QUESTION = document.getElementById("question");
 const CATEGORIES = document.getElementById("categories");
@@ -65,7 +65,12 @@ const handleReveal = (e) => {
     renderSaved();
   }
   if(e.target.id === 'viewAll'){
-    console.log(allQuestions);
+    let questions = [];
+    for(const category in allQuestions){
+      allQuestions[category].forEach(questionItem => questions.push(questionItem.question));
+    }
+    let questionHTML = questions.map(question => `<div>${question}</div>`);
+    DISPLAYQS.innerHTML = questionHTML.join("");
   }
 }
 
