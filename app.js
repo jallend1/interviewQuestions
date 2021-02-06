@@ -69,13 +69,8 @@ const handleReveal = (e) => {
   if(e.target.id === 'viewAll'){
     DISPLAYQS.classList.toggle('hidden');
     const VIEWALL = document.getElementById('viewAll');
-    DISPLAYQS.classList.contains('hidden') ? VIEWALL.innerText = "Show All Questions" : VIEWALL.innerText = "Hide All Questions"
-    let questions = [];
-    for(const category in allQuestions){
-      allQuestions[category].forEach(questionItem => questions.push(questionItem.question));
-    }
-    let questionHTML = questions.map(question => `<li>${question}</li>`)
-    DISPLAYQS.innerHTML = `<h3>All Questions</h3><ul>` + questionHTML.join("") + `<ul>`;
+    DISPLAYQS.classList.contains('hidden') ? VIEWALL.innerText = "Show All Questions" : VIEWALL.innerText = "Hide All Questions";
+    renderAll();
   }
 }
 
@@ -136,6 +131,15 @@ const removeQuestion = (currentQuestion) => {
   renderSaved();
   pickAQuestion();
 };
+
+const renderAll = () => {
+  let questions = [];
+    for(const category in allQuestions){
+      allQuestions[category].forEach(questionItem => questions.push(questionItem.question));
+    }
+    let questionHTML = questions.map(question => `<li>${question}</li>`)
+    DISPLAYQS.innerHTML = `<h3>All Questions</h3><ul>` + questionHTML.join("") + `<ul>`;
+}
 
 const renderQuestion = (question, category) => {
   QUESTION.innerText = question;
