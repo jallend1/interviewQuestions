@@ -60,15 +60,15 @@ const handleNav = (e) => {
 };
 
 const handleReveal = (e) => {
+  const VIEWSAVED = document.getElementById('viewSaved');
+  const VIEWALL = document.getElementById('viewAll');
   if(e.target.id === 'viewSaved'){
-    DISPLAYQS.classList.toggle('hidden');
-    const VIEWSAVED = document.getElementById('viewSaved');
+    VIEWSAVED.innerText === 'Show Saved Questions' ? DISPLAYQS.classList.remove('hidden') : DISPLAYQS.classList.add('hidden');
     DISPLAYQS.classList.contains('hidden') ? VIEWSAVED.innerText = "Show Saved Questions" : VIEWSAVED.innerText = "Hide Saved Questions"
     renderSaved();
   }
   if(e.target.id === 'viewAll'){
-    DISPLAYQS.classList.toggle('hidden');
-    const VIEWALL = document.getElementById('viewAll');
+    VIEWALL.innerText === 'Show All Questions' ? DISPLAYQS.classList.remove('hidden') : DISPLAYQS.classList.add('hidden');
     DISPLAYQS.classList.contains('hidden') ? VIEWALL.innerText = "Show All Questions" : VIEWALL.innerText = "Hide All Questions";
     renderAll();
   }
