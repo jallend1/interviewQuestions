@@ -49,8 +49,17 @@ const clearHistory = () => {
 const handleNav = (e) => {
   if (e.target.value) {
     const SIDEBAR = document.getElementById('sidebar');
+    const SAVEDCOUNT = document.getElementById('savedCount');
     isSaved = e.target.value === "true";
-    isSaved ? SIDEBAR.classList.add('hidden') : SIDEBAR.classList.remove('hidden');
+    if(isSaved){
+      SIDEBAR.classList.add('hidden');
+      SAVEDCOUNT.classList.remove('hidden');
+      SAVEDCOUNT.innerText = `Drawing from a pool of ${savedQuestions.length} questions`
+    }
+    else{
+      SIDEBAR.classList.remove('hidden');
+      SAVEDCOUNT.classList.add('hidden');
+    }
     pickAQuestion();
   }
 };
