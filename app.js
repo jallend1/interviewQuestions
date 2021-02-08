@@ -10,7 +10,7 @@ const REVEALQUESTIONS = document.getElementById("revealQuestions");
 let activeCategories = [];
 let allQuestions = {};
 let savedQuestions = JSON.parse(localStorage.getItem("savedQuestions")) || [];
-let filterQuestions = false;
+let isSaved = false;
 
 async function getQuestions() {
   try {
@@ -50,7 +50,7 @@ const clearHistory = () => {
 
 const handleNav = (e) => {
   if (e.target.value) {
-    filterQuestions = e.target.value === "true";
+    isSaved = e.target.value === "true";
     pickAQuestion();
   }
 };
@@ -88,35 +88,44 @@ const handleReveal = (e) => {
 const pickAQuestion = () => {
   let randomCategoryName;
   let randomQuestion;
-  if (filterQuestions === false) {
-    if (!activeCategories.length) {
-      randomQuestion =
-        "We can't display a question until you pick at least one category.";
-      randomCategoryName = null;
-    } else {
-      SAVEQUESTION.innerText = "Save Question";
-      // Selects random category from selected
-      const randomCatNum = Math.floor(Math.random() * activeCategories.length);
-      randomCategoryName = activeCategories[randomCatNum];
-      // Selects random number within selected category array lengths
-      const randomNumber = Math.floor(
-        Math.random() * allQuestions[randomCategoryName].length);
-      randomQuestion = allQuestions[randomCategoryName][randomNumber].question;
-    }
+  if (isSaved === false) {                                                                        // Handles selection from all pool
+    [randomQuestion, randomCategoryName] = pickFromAll(); 
   } else {
-    if (savedQuestions.length) {
-      const randomNumber = Math.floor(Math.random() * savedQuestions.length);
-      randomQuestion = savedQuestions[randomNumber].question;
-      randomCategoryName = savedQuestions[randomNumber].category;
-      SAVEQUESTION.innerText = "Remove Question";
-    } else {
-      randomQuestion =
-        "Save some questions you need to work on, and they'll show up here for your practice!";
-      randomCategoryName = null;
-    }
+    [randomQuestion, randomCategoryName] = pickFromSaved();
   }
   renderQuestion(randomQuestion, randomCategoryName);
 };
+
+const pickFromAll = () => {
+  let randomCategoryName;
+  let randomQuestion;
+  if (!activeCategories.length) {                                                               // Error catching to make sure at least one category is checked
+    randomQuestion = "We can't display a question until you pick at least one category.";
+    randomCategoryName = null;
+  } else {
+    SAVEQUESTION.innerText = "Save Question";                                                   // Selects random category from selected
+    const randomCatNum = Math.floor(Math.random() * activeCategories.length);                   // Selects random number from list of active categories
+    randomCategoryName = activeCategories[randomCatNum];                                        
+    const randomNumber = Math.floor(Math.random() * allQuestions[randomCategoryName].length);   // Selects random number for question from list of selected categories question length
+    randomQuestion = allQuestions[randomCategoryName][randomNumber].question;
+  }
+  return [randomQuestion, randomCategoryName];
+}
+
+const pickFromSaved = () => {                                                                     // Picks a random question from pool of saved questions
+  let randomCategoryName;
+  let randomQuestion;
+  if (savedQuestions.length) {
+    const randomNumber = Math.floor(Math.random() * savedQuestions.length);
+    randomQuestion = savedQuestions[randomNumber].question;
+    randomCategoryName = savedQuestions[randomNumber].category;
+    SAVEQUESTION.innerText = "Remove Question";
+  } else {
+    randomQuestion = "Save some questions you need to work on, and they'll show up here for your practice!";
+    randomCategoryName = null;
+  }
+  return [randomQuestion, randomCategoryName];
+}
 
 const questionStorage = () => {
   const QUESTION = document.getElementById("question");
@@ -128,7 +137,7 @@ const questionStorage = () => {
     SAVEQUESTION.innerText = "No question to save";
     return;
   }
-  filterQuestions
+  isSaved
     ? removeQuestion(currentQuestion)
     : saveQuestion(currentQuestion);
 };
