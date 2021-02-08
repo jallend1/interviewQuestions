@@ -7,7 +7,7 @@ const SAVEQUESTION = document.getElementById("saveQuestion");
 const DISPLAYQS = document.getElementById("displayQs");
 const CLEARQUESTIONS = document.getElementById("clearHistory");
 const POOL = document.getElementById("pool");
-const REVEALQUESTIONS = document.getElementById('revealQuestions')
+const REVEALQUESTIONS = document.getElementById("revealQuestions");
 
 let activeCategories = [];
 let allQuestions = {};
@@ -84,18 +84,18 @@ const handleReveal = (e) => {
     DISPLAYQS.classList.contains('hidden') ? VIEWALL.innerText = showAll : VIEWALL.innerText = "Hide All Questions";
     renderAll();
   }
-}
+};
 
 const pickAQuestion = () => {
   let randomCategoryName;
   let randomQuestion;
   if (filterQuestions === false) {
-    if(!activeCategories.length){
-      randomQuestion = "We can't display a question until you pick at least one category."
+    if (!activeCategories.length) {
+      randomQuestion =
+        "We can't display a question until you pick at least one category.";
       randomCategoryName = null;
-    }
-    else{
-        SAVEQUESTION.innerText = "Save Question";
+    } else {
+      SAVEQUESTION.innerText = "Save Question";
       // Selects random category from selected
       randomCategoryName =
         activeCategories[Math.floor(Math.random() * activeCategories.length)];
@@ -147,12 +147,15 @@ const removeQuestion = (currentQuestion) => {
 
 const renderAll = () => {
   let questions = [];
-    for(const category in allQuestions){
-      allQuestions[category].forEach(questionItem => questions.push(questionItem.question));
-    }
-    let questionHTML = questions.map(question => `<li>${question}</li>`)
-    DISPLAYQS.innerHTML = `<h3>All Questions</h3><ul>` + questionHTML.join("") + `<ul>`;
-}
+  for (const category in allQuestions) {
+    allQuestions[category].forEach((questionItem) =>
+      questions.push(questionItem.question)
+    );
+  }
+  let questionHTML = questions.map((question) => `<li>${question}</li>`);
+  DISPLAYQS.innerHTML =
+    `<h3>All Questions</h3><ul>` + questionHTML.join("") + `<ul>`;
+};
 
 const renderQuestion = (question, category) => {
   const QUESTION = document.getElementById("question");
@@ -164,7 +167,9 @@ const renderSaved = () => {
   const questions = savedQuestions.map((question) => {
     return `<li>${question.question}</li>`;
   });
-  DISPLAYQS.innerHTML = `<h3>Saved Questions</h3><ul>${questions.join("")}</ul>`;
+  DISPLAYQS.innerHTML = `<h3>Saved Questions</h3><ul>${questions.join(
+    ""
+  )}</ul>`;
 };
 
 const saveQuestion = (currentQuestion) => {
@@ -200,7 +205,7 @@ const updateCategories = (e) => {
   updatedCategoryIndex === -1
     ? activeCategories.push(e.target.name)
     : activeCategories.splice(updatedCategoryIndex, 1);
-    pickAQuestion();
+  pickAQuestion();
 };
 
 CATEGORIES.addEventListener("click", updateCategories);
@@ -208,7 +213,7 @@ SAVEQUESTION.addEventListener("click", questionStorage);
 GENERATENEW.addEventListener("click", pickAQuestion);
 CLEARQUESTIONS.addEventListener("click", clearHistory);
 POOL.addEventListener("click", handleNav);
-REVEALQUESTIONS.addEventListener('click', handleReveal);
+REVEALQUESTIONS.addEventListener("click", handleReveal);
 
 getQuestions();
 renderSaved();
