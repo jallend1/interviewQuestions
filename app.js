@@ -1,8 +1,6 @@
-// TODO QUESTION and DISPLAYQS might be better outside of global context as they don't have event listeners attached?
+// TODO DISPLAYQS might be better outside of global context as they don't have event listeners attached?
 // TODO Clean up pickAQuestion / saveAQuestion functions! Break those bad boys up!
-// TODO Change View All Qs / Saved Qs to HIDE All Qs / Saved Qs after clicked
 
-const QUESTION = document.getElementById("question");
 const CATEGORIES = document.getElementById("categories");
 const GENERATENEW = document.getElementById("generateNew");
 const SAVEQUESTION = document.getElementById("saveQuestion");
@@ -62,14 +60,28 @@ const handleNav = (e) => {
 const handleReveal = (e) => {
   const VIEWSAVED = document.getElementById('viewSaved');
   const VIEWALL = document.getElementById('viewAll');
-  if(e.target.id === 'viewSaved'){
-    VIEWSAVED.innerText === 'Show Saved Questions' ? DISPLAYQS.classList.remove('hidden') : DISPLAYQS.classList.add('hidden');
-    DISPLAYQS.classList.contains('hidden') ? VIEWSAVED.innerText = "Show Saved Questions" : VIEWSAVED.innerText = "Hide Saved Questions"
+  const showAll = 'Show All Questions';
+  const showSaved = 'Show Saved Questions';
+  if(e.target.id === 'viewSaved'){                            //If view saved is clicked on
+    if(VIEWSAVED.innerText === showSaved){                   //And it says Show Saved Questions
+      DISPLAYQS.classList.remove('hidden');                   //Show the hidden div
+      VIEWALL.innerText = showAll;                           //Resets other question toggle
+    }
+    else{
+      DISPLAYQS.classList.add('hidden');  
+    }
+    DISPLAYQS.classList.contains('hidden') ? VIEWSAVED.innerText = showSaved : VIEWSAVED.innerText = "Hide Saved Questions"
     renderSaved();
   }
   if(e.target.id === 'viewAll'){
-    VIEWALL.innerText === 'Show All Questions' ? DISPLAYQS.classList.remove('hidden') : DISPLAYQS.classList.add('hidden');
-    DISPLAYQS.classList.contains('hidden') ? VIEWALL.innerText = "Show All Questions" : VIEWALL.innerText = "Hide All Questions";
+    if(VIEWALL.innerText === showAll){
+      DISPLAYQS.classList.remove('hidden');
+      VIEWSAVED.innerText = showSaved;
+    }
+    else{
+      DISPLAYQS.classList.add('hidden');
+    }
+    DISPLAYQS.classList.contains('hidden') ? VIEWALL.innerText = showAll : VIEWALL.innerText = "Hide All Questions";
     renderAll();
   }
 }
@@ -109,6 +121,7 @@ const pickAQuestion = () => {
 };
 
 const questionStorage = () => {
+  const QUESTION = document.getElementById("question");
   const currentQuestion = {
     question: QUESTION.innerText,
     category: QUESTION.dataset.category,
@@ -142,6 +155,7 @@ const renderAll = () => {
 }
 
 const renderQuestion = (question, category) => {
+  const QUESTION = document.getElementById("question");
   QUESTION.innerText = question;
   QUESTION.dataset.category = category;
 };
