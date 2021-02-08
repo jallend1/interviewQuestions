@@ -1,10 +1,8 @@
-// TODO DISPLAYQS might be better outside of global context as they don't have event listeners attached?
 // TODO Clean up pickAQuestion / saveAQuestion functions! Break those bad boys up!
 
 const CATEGORIES = document.getElementById("categories");
 const GENERATENEW = document.getElementById("generateNew");
 const SAVEQUESTION = document.getElementById("saveQuestion");
-const DISPLAYQS = document.getElementById("displayQs");
 const CLEARQUESTIONS = document.getElementById("clearHistory");
 const POOL = document.getElementById("pool");
 const REVEALQUESTIONS = document.getElementById("revealQuestions");
@@ -58,6 +56,7 @@ const handleNav = (e) => {
 };
 
 const handleReveal = (e) => {
+  const DISPLAYQS = document.getElementById("displayQs");
   const VIEWSAVED = document.getElementById('viewSaved');
   const VIEWALL = document.getElementById('viewAll');
   const showAll = 'Show All Questions';
@@ -146,6 +145,7 @@ const removeQuestion = (currentQuestion) => {
 };
 
 const renderAll = () => {
+  const DISPLAYQS = document.getElementById("displayQs");
   let questions = [];
   for (const category in allQuestions) {
     allQuestions[category].forEach((questionItem) =>
@@ -164,6 +164,7 @@ const renderQuestion = (question, category) => {
 };
 
 const renderSaved = () => {
+  const DISPLAYQS = document.getElementById("displayQs");
   const questions = savedQuestions.map((question) => {
     return `<li>${question.question}</li>`;
   });
