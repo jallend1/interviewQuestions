@@ -13,55 +13,63 @@
   </head>
   <body>
     <div class="container">
-        <header>
-            <div id="image">
-                <img src="interview.png">
-                <a href="https://www.freepik.com/vectors/work">Image from www.freepik.com</a>
+      <header>
+        <div id="image">
+          <img src="interview.png" />
+          <a href="https://www.freepik.com/vectors/work"
+            >Image from www.freepik.com</a
+          >
+        </div>
+        <div id="blurb">
+          <h1>Sample Interview Questions</h1>
+          <h2>Interviews are hard.</h2>
+          <h2>Practice questions make them less hard.</h2>
+        </div>
+      </header>
+      <div id="content">
+        <div id="sidebar">
+          <div>
+            <h3>Categories</h3>
+            <form id="categories"></form>
+          </div>
+          <nav>
+            <ul id="revealQuestions">
+              <li><a href="#displayQs" id="viewAll">Show All Questions</a></li>
+              <li>
+                <a href="#displayQs" id="viewSaved">Show Saved Questions</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <main>
+          <form id="pool">
+            <input
+              type="radio"
+              name="questionpool"
+              id="allQs"
+              checked
+              value="false"
+            />
+            <label for="allQs">All Questions</label>
+            <input type="radio" name="questionpool" id="savedQs" value="true" />
+            <label for="savedQs">Saved Questions</label>
+          </form>
+          <h3>Random Question</h3>
+          <div id="questionBox">
+            <p id="question">...Loading a question ...</p>
+          </div>
+          <div class="buttons">
+            <div>
+              <button id="saveQuestion">Save Question</button>
+              <button id="generateNew">Generate New Question</button>
             </div>
-            <div id="blurb">
-                <h1>Sample Interview Questions</h1>
-                <h2>Interviews are hard.</h2>
-                <h2>Practice questions make them less hard.</h2>
+            <div>
+              <button id="clearHistory">Clear ALL Saved Questions</button>
             </div>
-        </header>
-        <div id="content">
-            <div id="sidebar">
-                <div>
-                    <h3>Categories</h3>
-                    <form id="categories">
-                    </form>
-                </div>
-                <nav>
-                    <ul id="revealQuestions">
-                        <li><a href="#displayQs" id="viewAll">Show All Questions</a></li>
-                        <li><a href="#displayQs"id="viewSaved">Show Saved Questions</a></li>
-                    </ul>
-                </nav>
-            </div>
-            <main>
-                <form id="pool">
-                    <input type="radio" name="questionpool" id="allQs" checked value="false">
-                    <label for="allQs">All Questions</label>
-                    <input type="radio" name="questionpool" id="savedQs" value="true">
-                    <label for="savedQs">Saved Questions</label>
-                </form>
-                <h3>Random Question</h3>
-                <div id="questionBox">
-                    <p id="question">...Loading a question ...</p>
-                </div>
-                <div class="buttons">
-                    <div>
-                        <button id="saveQuestion">Save Question</button>
-                        <button id="generateNew">Generate New Question</button>
-                    </div>
-                    <div>
-                        <button id="clearHistory">Clear ALL Saved Questions</button>
-                    </div>
-                </div>
-            </main>
+          </div>
+        </main>
       </div>
-      <div id="displayQs" class="hidden">
-      </div>
+      <div id="displayQs" class="hidden"></div>
       <footer>
         <p>
           Note: Saved questions are stored in your browser, so clearing your
