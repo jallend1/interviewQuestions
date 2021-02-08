@@ -48,7 +48,9 @@ const clearHistory = () => {
 
 const handleNav = (e) => {
   if (e.target.value) {
+    const SIDEBAR = document.getElementById('sidebar');
     isSaved = e.target.value === "true";
+    isSaved ? SIDEBAR.classList.add('hidden') : SIDEBAR.classList.remove('hidden');
     pickAQuestion();
   }
 };
