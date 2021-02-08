@@ -96,12 +96,11 @@ const pickAQuestion = () => {
     } else {
       SAVEQUESTION.innerText = "Save Question";
       // Selects random category from selected
-      randomCategoryName =
-        activeCategories[Math.floor(Math.random() * activeCategories.length)];
+      const randomCatNum = Math.floor(Math.random() * activeCategories.length);
+      randomCategoryName = activeCategories[randomCatNum];
       // Selects random number within selected category array lengths
       const randomNumber = Math.floor(
-        Math.random() * allQuestions[randomCategoryName].length
-      );
+        Math.random() * allQuestions[randomCategoryName].length);
       randomQuestion = allQuestions[randomCategoryName][randomNumber].question;
     }
   } else {
@@ -206,7 +205,9 @@ const updateCategories = (e) => {
   updatedCategoryIndex === -1
     ? activeCategories.push(e.target.name)
     : activeCategories.splice(updatedCategoryIndex, 1);
-  pickAQuestion();
+  // CLears out array elements listed as undefined after removal
+    activeCategories = activeCategories.filter(categories => categories !== undefined)
+    pickAQuestion();
 };
 
 CATEGORIES.addEventListener("click", updateCategories);
