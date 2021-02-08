@@ -1,5 +1,3 @@
-// TODO Clean up pickAQuestion / saveAQuestion functions! Break those bad boys up!
-
 const CATEGORIES = document.getElementById("categories");
 const GENERATENEW = document.getElementById("generateNew");
 const SAVEQUESTION = document.getElementById("saveQuestion");
@@ -182,8 +180,8 @@ const renderSaved = () => {
 };
 
 const saveQuestion = (currentQuestion) => {
+  // If the array isn't empty
   if (savedQuestions) {
-    // If the array isn't empty
     //Checks to see if the question was already saved
     const alreadyExists = savedQuestions.findIndex(
       (question) => question.question === currentQuestion.question
