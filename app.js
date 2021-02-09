@@ -48,17 +48,16 @@ const clearHistory = () => {
 
 const handleNav = (e) => {
   if (e.target.value) {
-    const SIDEBAR = document.getElementById('sidebar');
-    const SAVEDCOUNT = document.getElementById('savedCount');
+    const SIDEBAR = document.getElementById("sidebar");
+    const SAVEDCOUNT = document.getElementById("savedCount");
     isSaved = e.target.value === "true";
-    if(isSaved){
-      SIDEBAR.classList.add('hidden');
-      SAVEDCOUNT.classList.remove('hidden');
-      SAVEDCOUNT.innerText = `Drawing from a pool of ${savedQuestions.length} questions`
-    }
-    else{
-      SIDEBAR.classList.remove('hidden');
-      SAVEDCOUNT.classList.add('hidden');
+    if (isSaved) {
+      SIDEBAR.classList.add("hidden");
+      SAVEDCOUNT.classList.remove("hidden");
+      SAVEDCOUNT.innerText = `Drawing from a pool of ${savedQuestions.length} questions`;
+    } else {
+      SIDEBAR.classList.remove("hidden");
+      SAVEDCOUNT.classList.add("hidden");
     }
     pickAQuestion();
   }
@@ -66,30 +65,34 @@ const handleNav = (e) => {
 
 const handleReveal = (e) => {
   const DISPLAYQS = document.getElementById("displayQs");
-  const VIEWSAVED = document.getElementById('viewSaved');
-  const VIEWALL = document.getElementById('viewAll');
-  const showAll = 'Show All Questions';
-  const showSaved = 'Show Saved Questions';
-  if(e.target.id === 'viewSaved'){                            //If view saved is clicked on
-    if(VIEWSAVED.innerText === showSaved){                   //And it says Show Saved Questions
-      DISPLAYQS.classList.remove('hidden');                   //Show the hidden div
-      VIEWALL.innerText = showAll;                           //Resets other question toggle
+  const VIEWSAVED = document.getElementById("viewSaved");
+  const VIEWALL = document.getElementById("viewAll");
+  const showAll = "Show All Questions";
+  const showSaved = "Show Saved Questions";
+  if (e.target.id === "viewSaved") {
+    //If view saved is clicked on
+    if (VIEWSAVED.innerText === showSaved) {
+      //And it says Show Saved Questions
+      DISPLAYQS.classList.remove("hidden"); //Show the hidden div
+      VIEWALL.innerText = showAll; //Resets other question toggle
+    } else {
+      DISPLAYQS.classList.add("hidden");
     }
-    else{
-      DISPLAYQS.classList.add('hidden');  
-    }
-    DISPLAYQS.classList.contains('hidden') ? VIEWSAVED.innerText = showSaved : VIEWSAVED.innerText = "Hide Saved Questions"
+    DISPLAYQS.classList.contains("hidden")
+      ? (VIEWSAVED.innerText = showSaved)
+      : (VIEWSAVED.innerText = "Hide Saved Questions");
     renderSaved();
   }
-  if(e.target.id === 'viewAll'){
-    if(VIEWALL.innerText === showAll){
-      DISPLAYQS.classList.remove('hidden');
+  if (e.target.id === "viewAll") {
+    if (VIEWALL.innerText === showAll) {
+      DISPLAYQS.classList.remove("hidden");
       VIEWSAVED.innerText = showSaved;
+    } else {
+      DISPLAYQS.classList.add("hidden");
     }
-    else{
-      DISPLAYQS.classList.add('hidden');
-    }
-    DISPLAYQS.classList.contains('hidden') ? VIEWALL.innerText = showAll : VIEWALL.innerText = "Hide All Questions";
+    DISPLAYQS.classList.contains("hidden")
+      ? (VIEWALL.innerText = showAll)
+      : (VIEWALL.innerText = "Hide All Questions");
     renderAll();
   }
 };
@@ -97,8 +100,9 @@ const handleReveal = (e) => {
 const pickAQuestion = () => {
   let randomCategoryName;
   let randomQuestion;
-  if (isSaved === false) {                                                                        // Handles selection from all pool
-    [randomQuestion, randomCategoryName] = pickFromAll(); 
+  if (isSaved === false) {
+    // Handles selection from all pool
+    [randomQuestion, randomCategoryName] = pickFromAll();
   } else {
     [randomQuestion, randomCategoryName] = pickFromSaved();
   }
@@ -108,20 +112,25 @@ const pickAQuestion = () => {
 const pickFromAll = () => {
   let randomCategoryName;
   let randomQuestion;
-  if (!activeCategories.length) {                                                               // Error catching to make sure at least one category is checked
-    randomQuestion = "We can't display a question until you pick at least one category.";
+  if (!activeCategories.length) {
+    // Error catching to make sure at least one category is checked
+    randomQuestion =
+      "We can't display a question until you pick at least one category.";
     randomCategoryName = null;
   } else {
-    SAVEQUESTION.innerText = "Save Question";                                                   // Selects random category from selected
-    const randomCatNum = Math.floor(Math.random() * activeCategories.length);                   // Selects random number from list of active categories
-    randomCategoryName = activeCategories[randomCatNum];                                        
-    const randomNumber = Math.floor(Math.random() * allQuestions[randomCategoryName].length);   // Selects random number for question from list of selected categories question length
+    SAVEQUESTION.innerText = "Save Question"; // Selects random category from selected
+    const randomCatNum = Math.floor(Math.random() * activeCategories.length); // Selects random number from list of active categories
+    randomCategoryName = activeCategories[randomCatNum];
+    const randomNumber = Math.floor(
+      Math.random() * allQuestions[randomCategoryName].length
+    ); // Selects random number for question from list of selected categories question length
     randomQuestion = allQuestions[randomCategoryName][randomNumber].question;
   }
   return [randomQuestion, randomCategoryName];
-}
+};
 
-const pickFromSaved = () => {                                                                     // Picks a random question from pool of saved questions
+const pickFromSaved = () => {
+  // Picks a random question from pool of saved questions
   let randomCategoryName;
   let randomQuestion;
   if (savedQuestions.length) {
@@ -130,11 +139,12 @@ const pickFromSaved = () => {                                                   
     randomCategoryName = savedQuestions[randomNumber].category;
     SAVEQUESTION.innerText = "Remove Question";
   } else {
-    randomQuestion = "Save some questions you need to work on, and they'll show up here for your practice!";
+    randomQuestion =
+      "Save some questions you need to work on, and they'll show up here for your practice!";
     randomCategoryName = null;
   }
   return [randomQuestion, randomCategoryName];
-}
+};
 
 const questionStorage = () => {
   const QUESTION = document.getElementById("question");
@@ -146,9 +156,7 @@ const questionStorage = () => {
     SAVEQUESTION.innerText = "No question to save";
     return;
   }
-  isSaved
-    ? removeQuestion(currentQuestion)
-    : saveQuestion(currentQuestion);
+  isSaved ? removeQuestion(currentQuestion) : saveQuestion(currentQuestion);
 };
 
 const removeQuestion = (currentQuestion) => {
@@ -224,8 +232,10 @@ const updateCategories = (e) => {
     ? activeCategories.push(e.target.name)
     : activeCategories.splice(updatedCategoryIndex, 1);
   // CLears out array elements listed as undefined after removal
-    activeCategories = activeCategories.filter(categories => categories !== undefined)
-    pickAQuestion();
+  activeCategories = activeCategories.filter(
+    (categories) => categories !== undefined
+  );
+  pickAQuestion();
 };
 
 CATEGORIES.addEventListener("click", updateCategories);
